@@ -1,0 +1,41 @@
+def genre(prenom) :
+    """ Détermine le genre d'un prénom."""
+    list_F = ['abbygaël', 'agnès', 'amber', 'amy', 'anouck', 'astrid', 'caitlin', 'carmen', 'catlin', 'chantal',
+              'cheryll', 'cindy', 'cyndi', 'daphné', 'dorris', 'esther', 'ines', 'ingrid', 'jennifer', 'jennipher',
+              'kareen', 'karen', 'katel', 'katerin', 'kim', 'kirsten', 'kristal', 'krysten', 'kym', 'laury', 'maëlis',
+              'maëlyss', 'manon', 'marjory', 'marry', 'mary', 'maud', 'maureen', 'mayllis', 'myriam', 'naomi', 'nawell',
+              'nolween', 'nolwen', 'pénélope', 'rachel', 'rym', 'salomé', 'suzi', 'vikki', 'viky', 'wendi', 'wendy']
+    list_M = ['achille', 'adolphe', 'alexandre', 'alexey', 'ali', 'alphonse', 'anthony', 'antoine', 'baptiste', 'basile',
+              'björn', 'brice', 'bruce', 'christophe', 'corantyn', 'dany', 'eddie', 'eli', 'eliott', 'emile', 'enrique',
+              'etienne', 'eugène', 'fabrice', 'geoffrey', 'george', 'grégoire', 'guillaume', 'hipolyte', 'hippolyte',
+              'hypolite', 'hypolyte', 'hyppolite', 'hyppolyte', 'jeoffrey', 'jérémie', 'jérôme', 'jessy', 'joey', 'joffrey',
+              'johnn', 'johnny', 'johny', 'kyle', 'kylliann', 'lenny', 'louie', 'luca', 'luka', 'mamadou', 'mathys',
+              'matisse', 'matt', 'matthy', 'matysse', 'maurice', 'maxence', 'maxime', 'maxime', 'mike', 'moustapha',
+              'nickola', 'nicolae', 'noa', 'noah', 'noé', 'nykola', 'octave', 'oussama', 'patrice', 'pierre', 'piet',
+              'rodolphe', 'rodrigue', 'sacha', 'salvatore', 'scothy', 'scott', 'serge', 'serguey', 'stanley', 'steeve',
+              'steevie', 'stéphane', 'théodore', 'théophile', 'thimoté', 'thimothé', 'thimothy', 'timothé', 'timothy',
+              'tony', 'tymothé', 'ullysse', 'vianney', 'willy', 'yann', 'yassine', 'yoann', 'zinedine']
+    list_I = ['claude', 'stef', 'rayane', 'sasha', 'michal', 'valéry', 'sascha', 'sidney', 'ashley', 'devon', 'elijah',
+              'sydney', 'luke', 'ariel', 'ange', 'troy', 'percy', 'mickey', 'jamy', 'tyler', 'jihad', 'mathisse',
+              'robbin', 'brooklyn', 'flynn', 'heli', 'safa', 'charley', 'paris', 'sasja', 'sony', 'amour', 'berny',
+              'williame', 'gabi', 'myke', 'nike', 'phoenix', 'bonny', 'colyn', 'seven', 'shiva', 'tal', 'rio', 'ruby',
+              'celest', 'jule', 'lean', 'cecil', 'diamant', 'dior', 'kelsey', 'kristen', 'diesel', 'shany', 'tennessee',
+              'toulouse', 'bienvenue', 'dory', 'madison', 'meryl', 'loki', 'liberty', 'merryl', 'artémis', 'frédéricque',
+              'suzan', 'xiu', 'aschley']
+    reg_M1 = '(f|d|c|b|o|n|m|l|k|j|é|h|w|v|u|t|s|r|q|p|i|þ|z|x|ç|ö|ã|â|ï|g)$'
+    reg_F1 = '(e|a|ä|ü|y|ë)$'
+    reg_M2 = '(ld|ud|id|yd|rd|ad|ed|nd|od|ck|uk|rk|ik|ek|ak|ok|ix|ry|iy|oy|ky|by|uy|vy|my|dy|ay|gy|sz|iz|ez|nz|az|uz|\
+               ré|né|ip|up|ep|iq|ar|or|ir|er|ur|js|ss|rs|is|ns|os|ls|us|as|es|ht|nt|ot|it|rt|st|lt|ut|at|hu|ku|nu|ru|\
+               iu|mu|bu|gu|au|eu|du|av|ov|ev|aw|ch|ih|sh|nh|ph|bi|ci|ui|mi|ri|ii|si|oi|ji|ki|hi|yi|zi|di|ai|fi|gi|lj|\
+               ij|ej|aj|ul|yl|ol|ll|el|rl|il|al|ël|ym|em|om|im|am|un|hn|on|in|en|jn|an|uo|to|co|io|vo|mo|lo|po|no|so|\
+               ro|éo|ho|bo|ko|jo|go|yo|zo|eo|do|ao|ob|ub|ab|ib|eb|ic|ac|rc|we|be|pe|lf|uf|ff|af|of|ef|if|ng|ig|rg)$'
+    reg_F2 = '(yu|su|lu|ou|tu|et|tt|ys|ïs|oo|yn|rn|nn|ün|um|tl|ül|ei|vi|ti|ni|li|pi|th|ah|gh|eh|té|oé|lé|hé)$'
+    prenom = prenom.lower();
+    if prenom in list_F : return "F"
+    elif prenom in list_M : return "M"
+    elif prenom in list_I : return ""
+    elif re.search(reg_M2, prenom) : return "M"
+    elif re.search(reg_F2, prenom) : return "F"
+    elif re.search(reg_M1, prenom) : return "M"
+    elif re.search(reg_F1, prenom) : return "F"
+    else : return ""
